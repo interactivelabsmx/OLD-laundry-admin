@@ -1,0 +1,13 @@
+extends main/layout
+
+block styles
+
+block content
+  #site-wapper
+    #container.row
+      | !{html}
+block scripts
+  script.
+    var initialState = !{JSON.stringify(state).replace(/<\//g, "<\\/")}
+    var error = !{JSON.stringify(error).replace(/<\//g, "<\\/")}
+  script(src='/public/app/build/main#{minAssets}.js')

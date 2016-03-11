@@ -1,0 +1,33 @@
+{
+  "js": {
+    "src": "src/static/js/*.js",
+    "dest": "public/js/"
+  },
+  "css": {
+    "src": "src/static/scss/*.scss",
+    "dest": "public/css/"
+  },
+  "acss": {
+    "src": [
+      "server/web/views/**/*.jade",
+      "src/app/**/*.jsx"
+    ],
+    "dest": "public/css/"
+  },
+  "img": {
+    "src": [
+      "src/static/img/**/*.jpg",
+      "src/static/img/**/*.png",
+      "src/static/img/**/*.ico"
+    ],
+    "dest": "public/img/"
+  },
+  "svg": {
+    "src": "src/static/img/**/*.svg"
+  },
+  "react": {
+    "src": "./src/app/**/*",
+    "main": "./src/app/main.jsx",
+    "dest": "public/app/build/"
+  }
+}
