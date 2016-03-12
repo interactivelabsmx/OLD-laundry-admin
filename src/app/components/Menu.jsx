@@ -1,13 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-const Menu = ({ user, opened, openMenu }) => {
-  const sideClass = classnames(
-    'sidebar', { active: opened }
-  );
+const Menu = ({ user }) => {
   return (
-    <div className={ sideClass }>
-      <div className="sidebar-overlay" onClick={ openMenu }></div>
+    <div className="sidebar active">
       <div className="sidebar-content">
         <div className="top-head">
           <div className="name">{ user.displayName }</div>
@@ -21,9 +17,6 @@ const Menu = ({ user, opened, openMenu }) => {
           <a href="#profile"><i className="fa fa-user"></i><span>Profile</span></a>
           <a href="#settings"><i className="fa fa-cog"></i><span>Settings</span></a>
           <a href="#credits"><i className="fa fa-list"></i><span>Credits</span></a>
-          <a href="#close" onClick={ openMenu }>
-            <i className="fa fa-times"></i><span>Close</span>
-          </a>
         </nav>
       </div>
     </div>
@@ -31,9 +24,7 @@ const Menu = ({ user, opened, openMenu }) => {
 };
 
 Menu.propTypes = {
-  opened: PropTypes.bool.isRequired,
-  user: PropTypes.object.isRequired,
-  openMenu: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
 };
 
 export default Menu;

@@ -6,9 +6,7 @@ import RadialProgress from '../../components/RadialProgress';
 export const HomeView = ({ orders, user, getCurrentOrders }) => {
   return (
     <div className="container text-center">
-      <div className="row align-middle Py(15px)">
-        Hello World
-      </div>
+      <div className="Py(15px)">Hello World</div>
       <button className="button" onClick={ getCurrentOrders }>Get Current Orders
         <span>Some action to be executed from reducers</span>
       </button>

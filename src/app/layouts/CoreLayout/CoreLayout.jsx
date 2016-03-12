@@ -14,9 +14,7 @@ class CoreLayout extends React.Component {
     const title = routeToTitle[this.props.route.path];
     return (
       <div className="W(100%)">
-        <Menu opened={ this.state.openedMenu } openMenu={ this.openMenu }
-          user={ this.props.user }
-        />
+        <Menu user={ this.props.user } />
         {children}
       </div>
     );
