@@ -1,16 +1,24 @@
 
+import { getSpecs } from '../../awsApi/awsSpecs';
+import { getServiceTypes } from '../../awsApi/awsServiceTypes';
 
-const getUser = (req) => {
-  const user = Object.assign({}, req.auth.credentials.user.profile, {
-    pointsMissing: 1500,
-    pointsCompleted: 70,
+const getUser = (request) => new Promise((resolve) => {
+  const user = request.auth.credentials.user;
+  resolve(user);
+});
+
+const getState = (request) => new Promise((resolve) => {
+  const state = {};
+  getUser(request).then((user) => {
+    state.user = user;
+    return getSpecs();
+  }).then((specs) => {
+    state.specs = specs;
+    return getServiceTypes();
+  }).then((serviceTypes) => {
+    state.serviceTypes = serviceTypes;
+    resolve(state);
   });
-  return user;
-};
-
-const getState = (req) => ({
-  orders: null,
-  user: getUser(req),
 });
 
 module.exports = {

@@ -1,7 +1,7 @@
 
 module.exports = [
   '/**',
-  ' * Interactive Labs - administrators laundry web',
+  ' * Interactive Labs - consumer laundry web',
   ' * @version v1.0.0',
   ' */',
   '',

@@ -1,19 +1,46 @@
-export const UPDATE_USER = 'UPDATE_USER';
+// import { post } from 'jquery';
 
-export const updateUser = (value) => ({
+export const UPDATE_USER = 'UPDATE_USER';
+export const ADD_ADDRESS = 'ADD_ADDRESS';
+
+export const updateUserAction = (user) => ({
   type: UPDATE_USER,
-  payload: value,
+  payload: user,
+});
+
+export const addUserAddressAction = (address) => ({
+  type: ADD_ADDRESS,
+  payload: address,
+});
+
+export const updateUserReducer = (user, action) => action.payload;
+
+export const addUserAddressReducer = (user, action) => {
+  const addresses = user.addresses || [];
+  addresses.push(action.payload);
+  return Object.assign({}, user, {
+    addresses,
+  });
+};
+
+export const addUserAddress = (values, dispatch) => new Promise(resolve => {
+  setTimeout(() => {
+    dispatch(addUserAddressAction(values));
+    resolve(values);
+  }, 500);
 });
 
 export const actions = {
-  updateUser,
+  updateUserAction,
+  addUserAddressAction,
 };
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [UPDATE_USER]: (state, action) => state + action.payload,
+  [UPDATE_USER]: updateUserReducer,
+  [ADD_ADDRESS]: addUserAddressReducer,
 };
 
 // ------------------------------------

@@ -4,8 +4,15 @@ block styles
 
 block content
   #site-wapper
-    .row
+    #container.ui.center.aligned.grid
       | !{html}
+    footer.footer
+      a(href='/') Home
+      span /
+      a(href='/main') Main
+      span /
+      a(href='/profile') Profile
+
 block scripts
   script.
     var initialState = !{JSON.stringify(state).replace(/<\//g, "<\\/")}

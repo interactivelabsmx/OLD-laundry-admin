@@ -1,13 +1,17 @@
 {
-  "name": "il-laundry-admin-web",
+  "name": "il-laundry-consumer-web",
   "version": "1.0.0",
-  "description": "Laundry administration website",
+  "description": "Laundry consumer wesite",
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js --quiet --ext .jsx,.js **/*",
     "start": "node server.js",
     "test": "./node_modules/lab/bin/lab -l",
     "build": "./node_modules/gulp/bin/gulp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/interactivelabs/laundry-web.git"
   },
   "keywords": [
     "React",
@@ -18,8 +22,8 @@
   "author": "Luis Gonzalez <luismgonzalezb@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "5.7.1",
-    "npm": "3.6.0"
+    "node": "5.9.0",
+    "npm": "3.7.3"
   },
   "dependencies": {
     "babel-loader": "6.x.x",
@@ -30,8 +34,6 @@
     "classnames": "2.x.x",
     "confidence": "1.x.x",
     "faker": "3.x.x",
-    "falcor": "latest",
-    "falcor-router": "latest",
     "glue": "3.x.x",
     "good": "6.x.x",
     "good-console": "5.x.x",
@@ -42,7 +44,7 @@
     "inert": "3.x.x",
     "jade": "1.x.x",
     "joi": "8.x.x",
-    "jquery": "^2.2.1",
+    "jquery": "2.x.x",
     "opbeat": "3.x.x",
     "poop": "2.x.x",
     "react": "0.x.x",
@@ -51,7 +53,9 @@
     "react-router": "2.x.x",
     "react-router-redux": "4.x.x",
     "redux": "3.x.x",
+    "redux-form": "4.x.x",
     "redux-thunk": "2.x.x",
+    "request": "2.x.x",
     "rx": "4.x.x",
     "scooter": "2.x.x",
     "vision": "4.x.x"

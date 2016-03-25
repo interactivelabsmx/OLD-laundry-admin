@@ -1,12 +1,16 @@
 import { combineReducers } from 'redux';
 import { routerReducer as router } from 'react-router-redux';
-import falcor from './reducers/falcor';
-import orders from './reducers/orders';
+import { reducer as form } from 'redux-form';
+import serviceTypes from './reducers/serviceTypes';
 import user from './reducers/user';
+import specs from './reducers/specs';
 
 export default combineReducers({
-  user,
-  orders,
+  // Boilerplate reducers
+  form,
   router,
-  falcor,
+  // Custom reducers
+  user,
+  specs,
+  serviceTypes,
 });

@@ -1,12 +1,12 @@
-# laundry-admin
+# laundry-web
 
 Laundry web for Cesar's business
 
 ## Installation
 
 ```bash
-$ git clone git@github.com:interactivelabs/laundry-admin.git
-$ cd laundry-admin
+$ git clone git@github.com:interactivelabs/laundry-web.git
+$ cd laundry-web
 $ npm run build
 $ npm start
 ```

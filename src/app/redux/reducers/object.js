@@ -1,19 +1,21 @@
-export const INIT_FALCOR_MODEL = 'INIT_FALCOR_MODEL';
+export const UPDATE_USER = 'UPDATE_USER';
 
-export const initFalcorModel = (value) => ({
-  type: INIT_FALCOR_MODEL,
-  payload: value,
+export const updateUserAction = (user) => ({
+  type: UPDATE_USER,
+  payload: user,
 });
 
+export const updateUserReducer = (state, action) => action.payload;
+
 export const actions = {
-  initFalcorModel,
+  updateUserAction,
 };
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [INIT_FALCOR_MODEL]: (state, action) => state + action.payload,
+  [UPDATE_USER]: updateUserReducer,
 };
 
 // ------------------------------------
