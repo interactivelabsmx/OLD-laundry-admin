@@ -1,7 +1,7 @@
 {
-  "name": "il-laundry-consumer-web",
+  "name": "il-laundry-admin-web",
   "version": "1.0.0",
-  "description": "Laundry consumer wesite",
+  "description": "Laundry administration wesite",
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js --quiet --ext .jsx,.js **/*",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/interactivelabs/laundry-web.git"
+    "url": "https://github.com/interactivelabs/laundry-admin.git"
   },
   "keywords": [
     "React",
