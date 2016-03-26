@@ -7,7 +7,7 @@ const getUser = (request) => new Promise((resolve) => {
   resolve(user);
 });
 
-const getState = (request) => new Promise((resolve) => {
+const getState = (request) => new Promise((resolve, reject) => {
   const state = {};
   getUser(request).then((user) => {
     state.user = user;
@@ -18,6 +18,8 @@ const getState = (request) => new Promise((resolve) => {
   }).then((serviceTypes) => {
     state.serviceTypes = serviceTypes;
     resolve(state);
+  }).catch((err) => {
+    reject(err);
   });
 });
 

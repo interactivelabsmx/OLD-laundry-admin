@@ -4,7 +4,7 @@ import { renderToString } from 'react-dom/server';
 import { RouterContext, match } from 'react-router';
 import createLocation from 'history/lib/createLocation';
 
-import makeRoutes from '../../../src/app/routes';
+import makeRoutes from '../../../src/app/routes/Routes';
 import configureStore from '../../../src/app/redux/configureStore';
 
 const RenderApp = (url, initialState) => new Promise((resolve, reject) => {

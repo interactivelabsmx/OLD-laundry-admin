@@ -1,8 +1,8 @@
-import { get } from 'jquery';
-import { post } from 'jquery';
+import { get, post, ajax } from 'jquery';
 
 export const GET_SPECS = 'GET_SPECS';
 export const CREATE_SPEC = 'CREATE_SPEC';
+export const DELETE_SPEC = 'DELETE_SPEC';
 
 export const getSpecsAction = (specs) => ({
   type: GET_SPECS,
@@ -14,12 +14,17 @@ export const createSpecAction = (spec) => ({
   payload: spec,
 });
 
-export const getSpecsReducer = (state, action) => action.payload;
+export const deleteSpecAction = (spec) => ({
+  type: DELETE_SPEC,
+  payload: spec,
+});
 
-export const createSpecReducer = (state, action) => {
-  state.push(action.payload);
-  return state;
-};
+export const getSpecsReducer = (specs, action) => action.payload;
+
+export const createSpecReducer = (specs, action) => [...specs, action.payload];
+
+export const deleteSpecReducer = (specs, action) =>
+  specs.filter(spec => parseInt(spec.idSpecs, 0) !== parseInt(action.payload, 0));
 
 export const getSpecs = () => (dispatch) => {
   get('/api/v1/getspecs', (data) => {
@@ -27,11 +32,20 @@ export const getSpecs = () => (dispatch) => {
   });
 };
 
-export const createSpec = (values, dispatch) => new Promise(resolve => {
+export const deleteSpec = (id) => (dispatch) => {
+  ajax({
+    url: '/api/v1/getspecs',
+    method: 'DELETE',
+    data: { id },
+  }).done(() => {
+    dispatch(deleteSpecAction(id));
+  });
+};
+
+export const createSpecForm = (values, dispatch) => new Promise(resolve => {
   post('/api/v1/createspec', values).done((data) => {
-    console.log(data);
-    dispatch(createSpecAction(values));
-    resolve(values);
+    dispatch(createSpecAction(data));
+    resolve(data);
   });
 });
 
@@ -46,6 +60,7 @@ export const actions = {
 const ACTION_HANDLERS = {
   [GET_SPECS]: getSpecsReducer,
   [CREATE_SPEC]: createSpecReducer,
+  [DELETE_SPEC]: deleteSpecReducer,
 };
 
 // ------------------------------------

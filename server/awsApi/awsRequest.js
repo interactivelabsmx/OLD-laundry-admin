@@ -21,7 +21,7 @@ export const get = (path, resolve, reject) => {
 };
 
 export const post = (path, payload, resolve, reject) => {
-  const reqOptions = Object.assign({}, options, { formData: payload });
+  const reqOptions = Object.assign({}, options, { body: payload });
   r.post(`${host}/${path}`, reqOptions, (err, res, result) => {
     if (err) {
       reject(err);

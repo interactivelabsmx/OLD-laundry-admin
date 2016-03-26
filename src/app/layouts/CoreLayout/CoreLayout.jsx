@@ -4,12 +4,6 @@ import { connect } from 'react-redux';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
 
-const routeTitle = {
-  '/main': 'Overview',
-  '/main/': 'Overview',
-  '/main/neworder': 'New Order',
-};
-
 class CoreLayout extends React.Component {
   constructor(props) {
     super(props);
@@ -23,14 +17,21 @@ class CoreLayout extends React.Component {
   }
   render() {
     const { children } = this.props;
-    const title = routeTitle[this.props.location.pathname];
     return (
-      <div className="ui">
-        <Header title={ title } openMenu={ this.openMenu } user={ this.props.user } />
-        <Menu opened={ this.state.openedMenu } openMenu={ this.openMenu }
-          user={ this.props.user }
-        />
-        { children }
+      <div className="ui grid">
+        <Header />
+        <div className="sixteen wide column">
+          <div className="ui grid">
+            <div className="four wide column">
+              <Menu opened={ this.state.openedMenu } openMenu={ this.openMenu }
+                user={ this.props.user }
+              />
+            </div>
+            <div className="twelve wide column">
+              { children }
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

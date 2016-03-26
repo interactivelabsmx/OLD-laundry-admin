@@ -1,6 +1,6 @@
 import { get, post } from './awsRequest';
 
-export default {
+module.exports = {
   getServiceTypes() {
     return new Promise((resolve, reject) => {
       get('service-type', resolve, reject);

@@ -1,6 +1,6 @@
 import { get, post } from './awsRequest';
 
-export default {
+module.exports = {
   getUser(id) {
     return new Promise((resolve, reject) => {
       get(`clients/${id}`, resolve, reject);

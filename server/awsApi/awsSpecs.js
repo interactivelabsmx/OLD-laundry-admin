@@ -1,6 +1,6 @@
 import { get, post } from './awsRequest';
 
-export default {
+module.exports = {
   getSpecs() {
     return new Promise((resolve, reject) => {
       get('spec', resolve, reject);

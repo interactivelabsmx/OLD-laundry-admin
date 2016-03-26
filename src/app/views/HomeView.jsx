@@ -1,12 +1,9 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-export const HomeView = ({ user }) => (
-  <div className="container text-center">
-    <div className="ui two columns row  Py(15px)">
-      <div className="column">{ user.pointsMissing }</div>
-      <div className="column">{ user.pointsCompleted }</div>
-    </div>
+export const HomeView = () => (
+  <div className="Ta(c)">
+    <h1>Home</h1>
   </div>
 );
 

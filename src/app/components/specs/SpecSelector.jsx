@@ -5,22 +5,26 @@ import SpecSelectOption from './SpecSelectOption';
 
 class SpecSelector extends React.Component {
   componentDidMount() {
-    $('.ui.dropdown').dropdown();
+    $('.specsDropdown').dropdown();
+  }
+  componentWillReceiveProps() {
+    $('.specsDropdown').dropdown();
   }
   render() {
     const dropDownSpecs = this.props.specs.map((spec, idx) => (
       <SpecSelectOption spec={ spec } key={ idx } />
     ));
     return (
-      <section>
-        <div className="ui dropdown">
-          <input type="hidden" name="idSpecs" />
+      <div className="D(ib)">
+        <div className="ui selection dropdown specsDropdown">
+          <input type="hidden" id="idSpecs" name="idSpecs" />
           <div className="default text">Specs</div>
+          <i className="dropdown icon"></i>
           <div className="menu">
             { dropDownSpecs }
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 }

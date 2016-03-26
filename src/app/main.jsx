@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { useRouterHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import makeRoutes from './routes';
+import makeRoutes from './routes/Routes';
 import Root from './routes/Root';
 import configureStore from './redux/configureStore';
 

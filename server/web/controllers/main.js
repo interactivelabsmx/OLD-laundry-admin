@@ -12,7 +12,6 @@ exports.index = {
         baseData.html = html;
         return reply.view('main', baseData);
       }).catch((error) => {
-        console.log(error);
         throw error;
       });
     });
